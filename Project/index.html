@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>SRM_WP_mini</title>
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="style.css" rel="stylesheet">
+      <link href="css/animate.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/responsive.css" rel="stylesheet">
+      <link href="css/colors.css" rel="stylesheet">
+      <link href="css/ekko-lightbox.css" rel="stylesheet">
+      
+      <style>
+         table,th,td {
+            border : 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            table-layout: fixed;
+            margin: 40px auto 60px;
+            color: black;
+         }
+         th,td {
+
+            padding: 5px;
+            text-align: center;
+         }
+         button{
+            background-color: black;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration:blanchedalmond;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 500px;
+            cursor: pointer;;
+         }
+      </style>
+   </head>
+
+   <body id="home_page" class="home_page">
+      
+      <header class="header">
+        <div class="header_top_section">
+           <div class="container">
+              <div class="row">
+                  <div class="col-lg-3">
+                     <div class="full">
+                        <div class="logo">
+                           <a href="index.html"><img src="images/logo1.png" /></a>
+                        </div>
+                     </div>
+                  </div>
+               <div class="col-lg-9 site_information">
+                  <div class="float-right">
+                     <div class="main_menu">
+                        <nav class="navbar navbar-inverse navbar-toggleable-md">
+                           <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
+                              <ul class="navbar-nav" style="color: black;">
+                                 <li class="nav-item active" style="background-color: black;">
+                                    <a class="nav-link" href="index.html" style="background-color: black;">Home</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link color-grey-hover" href="SMS/index.php" style="color: blanchedalmond;background-color: black;">Student's Portal</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+
+      <section class="main_full banner_section_top">
+         <div class="container-fluid">
+           <div class="row">
+              <div class="full">
+                  <div class="slider_banner">
+                     <img class="img-responsive" src="images/SRM.jpg" alt="#" />
+                     <div class="slide_cont">
+                        <div class="slider_cont_inner">
+                           <h3 style="color: black;">Welcome!</h3>
+                           <p style="color: black; background-color: blanchedalmond;">This is a School Website created for Web Programming Mini Project by Kartikeya Sharma, Akash Gakhar and Yash Choudhary. </p>
+                        </div>
+                     </div>
+                  </div>
+             </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="layout_padding section">
+
+         
+         <div class="container">
+
+            
+            
+            <button type="button" onclick="loadDoc()" class="button">Branch Details</button>
+            <br><br>
+            <table id="demo" ></table>
+            
+            <script>
+               function loadDoc() {
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                     if (this.readyState == 4 && this.status == 200) {
+                        myFunction(this);
+                     }
+                  };
+                  xhttp.open("GET", "new.xml", true);
+                  xhttp.send();
+               }
+               function myFunction(xml) {
+                  var i;
+                  var xmlDoc = xml.responseXML;
+                  var table="<tr><th>Name</th><th>Year</th></tr>";
+                  var x = xmlDoc.getElementsByTagName("branch");
+                  for (i = 0; i <x.length; i++) { 
+                     table += "<tr><td>" +
+                     x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+                     "</td><td>" +
+                     x[i].getElementsByTagName("year")[0].childNodes[0].nodeValue +
+                     "</td></tr>";
+                  }
+                  document.getElementById("demo").innerHTML = table;
+               }
+            </script>
+
+            
+            
+
+
+            <div class="row">
+               <div class="col-lg-12 text_align_center">
+                  <div class="full heading_s1">
+                     <iframe width="800" height="498" src="https://www.youtube.com/embed/7qjZH3h1vKw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     <h2>Our Courses</h2>
+                  </div>
+                  <div class="full">
+                     <p class="large">We have 3 major courses to choose from.</p>
+                  </div>
+               </div>
+            </div>
+            
+            
+            <div class="row">
+
+              <div class="col-md-4 text_align_center">
+                 <div class="cours">
+                   <img class="img-responsive" src="images/cour1.png" alt="#" />
+                 </div>
+                 <h3>Course A</h3>
+                 <p>This is the first course.</p>
+              </div>  
+
+              <div class="col-md-4 text_align_center">
+                 <div class="cours">
+                   <img class="img-responsive" src="images/cour2.png" alt="#" />
+                 </div>
+                 <h3>Course B</h3>
+                 <p>This is the second course.</p>
+              </div> 
+
+              <div class="col-md-4 text_align_center">
+                 <div class="cours">
+                   <img class="img-responsive" src="images/cour3.png" alt="#" />
+                 </div>
+                 <h3>Course C</h3>
+                 <p>This is the third course.</p>
+              </div> 
+            </div>
+         </div>
+      </section>
+   </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body{
+        background: url('school.jpg');
+    }
+    h3{
+        color: black !important ;
+        background:yellow !important;
+    }
+    .container {
+  width: 500px;
+  clear: both;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
+}              .add{
+	  background-color:#d9534f;
+	  color:black;
+	  font-size:30px;
+      text-align: center;
+  }
+  a:hover{
+	  background-color: burlywood !important;
+  }
+    
+</style>
+<body>
+    <div class="container">
+        <center><h1>Enter Details</center></h1>
+            <hr>
+    <form method="post" action="student.php" >
+            <h3>Name: <input type="text" name="name" placeholder="Enter the Name"/ required></h3>
+            <h3>Father's Name: <input type="text" name="fname" placeholder="Enter the Father's Name"/ required></h3>
+            <h3>Mother's Name: <input type="text" name="mname" placeholder="Enter the Mother's Name"/ required></h3>
+            <h3>Contact: <input type="text" name="mob" placeholder="Enter the Mobile Number"/ required></h3>
+            <h3>Class: <input type="text" name="class" placeholder="Enter the Class"/ required></h3>
+            <h3>Semester: <input type="text" name="sem" placeholder="Enter the Semester"/ required></h3></justify>
+            <input type="submit" value="submit" name="submit"/>
+</form>
+<br>
+<div class="list-group">
+    <a href="index.html" class="list-group-item add">Home</a><br>
+</div>
+</div>
+</body>
+</html>
